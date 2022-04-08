@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCybmXAUWgGDCMNQWvcRdaMgE31I1GkF8M",
@@ -32,14 +32,42 @@ const createacctbtn = document.getElementById("create-acct-btn");
 var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSignUpPassword;
 
 createacctbtn.addEventListener("click", function() {
+  var isVerified = true;
+
   signupEmail = signUpEmailIn.value;
   confirmSignupEmail = confirmSignUpEmailIn.value;
   if(signUpEmail != confirmSignupEmail) {
-      window.alert("Fields do not match. Try again.")
+      window.alert("Email fields do not match. Try again.")
+      isVerified = false;
   }
 
   signupPassword = signUpPasswordIn.value;
   confirmSignupPassword = confirmSignUpPasswordIn.value;
+  if(signUpEmail != confirmSignupEmail) {
+      window.alert("Password fields do not match. Try again.")
+      isVerified = false;
+  }
+  
+  if(signUpEmail == "" || confirmSignupEmail == "" || signupPassword = "" || confirmSignupPassword == "") {
+    window.alert("Please fill out all required fields.");
+    isVerified = false;
+  }
+  
+  if(isVerified) {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      // ...
+      window.alert("Success! Account created.");
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      window.alert("Error occurred. Try again.");
+    });
+  }
 });
 
 submitButton.addEventListener("click", function() {
