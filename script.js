@@ -42,13 +42,13 @@ createacctbtn.addEventListener("click", function() {
   }
 
   signupPassword = signupPasswordIn.value;
-  confirmSignupPassword = confirmSignUpPasswordIn.value;
-  if(signupPassword != confirmSignupPassword) {
+  confirmSignUpPassword = confirmSignUpPasswordIn.value;
+  if(signupPassword != confirmSignUpPassword) {
       window.alert("Password fields do not match. Try again.")
       isVerified = false;
   }
   
-  if(signupEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignupPassword == null) {
+  if(signupEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignUpPassword == null) {
     window.alert("Please fill out all required fields.");
     isVerified = false;
   }
