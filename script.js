@@ -23,7 +23,25 @@ const passwordInput = document.getElementById("password");
 const main = document.getElementById("main");
 const createacct = document.getElementById("create-acct")
 
-var email, password
+const signupEmailIn = document.getElementById("email-signup");
+const confirmSignupEmailIn = document.getElementById("confirm-email-signup");
+const signupPasswordIn = document.getElementById("password-signup");
+const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
+const createacctbtn = document.getElementById("create-acct-btn");
+
+var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSignUpPassword;
+var error = document.getElementById("error-messages");
+
+createacctbtn.addEventListener("click", function() {
+  signupEmail = signUpEmailIn.value;
+  confirmSignupEmail = confirmSignUpEmailIn.value;
+  if(signUpEmail != confirmSignupEmail) {
+      error.innerHTML = "Email fields must match.";
+  }
+
+  signupPassword = signUpPasswordIn.value;
+  confirmSignupPassword = confirmSignUpPasswordIn.value;
+});
 
 submitButton.addEventListener("click", function() {
   email = emailInput.value;
