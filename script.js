@@ -48,7 +48,7 @@ createacctbtn.addEventListener("click", function() {
       isVerified = false;
   }
   
-  if(signUpEmail == null || confirmSignupEmail == null || signupPassword = null || confirmSignupPassword == null) {
+  if(signUpEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignupPassword == null) {
     window.alert("Please fill out all required fields.");
     isVerified = false;
   }
