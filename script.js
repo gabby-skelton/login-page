@@ -34,27 +34,27 @@ var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSig
 createacctbtn.addEventListener("click", function() {
   var isVerified = true;
 
-  signupEmail = signUpEmailIn.value;
-  confirmSignupEmail = confirmSignUpEmailIn.value;
-  if(signUpEmail != confirmSignupEmail) {
+  signupEmail = signupEmailIn.value;
+  confirmSignupEmail = confirmSignupEmailIn.value;
+  if(signupEmail != confirmSignupEmail) {
       window.alert("Email fields do not match. Try again.")
       isVerified = false;
   }
 
-  signupPassword = signUpPasswordIn.value;
+  signupPassword = signupPasswordIn.value;
   confirmSignupPassword = confirmSignUpPasswordIn.value;
-  if(signUpEmail != confirmSignupEmail) {
+  if(signupPassword != confirmSignupPassword) {
       window.alert("Password fields do not match. Try again.")
       isVerified = false;
   }
   
-  if(signUpEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignupPassword == null) {
+  if(signupEmail == null || confirmSignupEmail == null || signupPassword == null || confirmSignupPassword == null) {
     window.alert("Please fill out all required fields.");
     isVerified = false;
   }
   
   if(isVerified) {
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
       .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
