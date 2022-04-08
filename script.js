@@ -29,6 +29,8 @@ const signupPasswordIn = document.getElementById("password-signup");
 const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
 const createacctbtn = document.getElementById("create-acct-btn");
 
+const returnBtn = document.getElementById("return-btn");
+
 var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSignUpPassword;
 
 createacctbtn.addEventListener("click", function() {
@@ -95,4 +97,9 @@ submitButton.addEventListener("click", function() {
 signupButton.addEventListener("click", function() {
     main.style.display = "none";
     createacct.style.display = "block";
+});
+
+returnBtn.addEventListener("click", function() {
+    main.style.display = "block";
+    createacct.style.display = "none";
 });
