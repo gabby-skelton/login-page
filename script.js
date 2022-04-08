@@ -30,13 +30,12 @@ const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup
 const createacctbtn = document.getElementById("create-acct-btn");
 
 var email, password, signupEmail, signupPassword, confirmSignupEmail, confirmSignUpPassword;
-var error = document.getElementById("error-messages");
 
 createacctbtn.addEventListener("click", function() {
   signupEmail = signUpEmailIn.value;
   confirmSignupEmail = confirmSignUpEmailIn.value;
   if(signUpEmail != confirmSignupEmail) {
-      error.innerHTML = "Email fields must match.";
+      window.alert("Fields do not match. Try again.")
   }
 
   signupPassword = signUpPasswordIn.value;
