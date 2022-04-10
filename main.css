@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,6 +14,7 @@ body {
 h1 {
   margin-bottom: 8%;
   text-align: center;
+  font-family: "Fredoka One", cursive;
 }
 
 p {
