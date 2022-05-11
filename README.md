@@ -87,7 +87,7 @@ The structure for this page is pretty simple. We'll have a container with 2 divs
  1. Adding "module" as the type is an important step to make sure that we can import methods from firebase later. 
  2. If you attempt to run your project locally with the script linked in your HTML, you will get an error. More detail on this in **Step 5**.
  
-## Step 4) CSS
+## Step 5) CSS
 
 **Remove the default margins, padding, and box-sizing from all of the elements on the page.**
 ``` css
@@ -198,7 +198,7 @@ button:hover {
 }
 ```
  
-## Step 5) JavaScript
+## Step 6) JavaScript
 ``` java
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
